@@ -4,7 +4,7 @@ metadata:
   name: &app prowlarr
   namespace: default
 spec:
-  interval: 30m
+  interval: 5m
   chart:
     spec:
       chart: app-template
