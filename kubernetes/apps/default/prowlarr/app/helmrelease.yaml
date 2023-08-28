@@ -45,6 +45,11 @@ spec:
         tls:
           - hosts:
               - *host
+    service:
+      main:
+        ports:
+          http:
+            port: &port 9696
     persistence:
       config:
         enabled: true
