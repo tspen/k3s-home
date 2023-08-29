@@ -72,10 +72,10 @@ spec:
           - hosts:
               - *host
 
-    persistence:
-      config:
-        enabled: true
-        existingClaim: prowlarr-config
+    # persistence:
+    #   config:
+    #     enabled: true
+    #     existingClaim: prowlarr-config
 
     resources:
       requests:
