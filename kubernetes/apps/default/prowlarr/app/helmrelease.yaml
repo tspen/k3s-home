@@ -31,7 +31,7 @@ spec:
       tag: 1.8.4.3884
     env:
       TZ: "${TIMEZONE}"
-      PROWLARR__INSTANCE_NAME: Prowlarr
+      PROWLARR__INSTANCE_NAME: prowlarr
       PROWLARR__PORT: &port 9696
       PROWLARR__LOG_LEVEL: info
 
@@ -41,21 +41,21 @@ spec:
           http:
             port: *port
 
-        probes:
-      liveness: &probes
-        enabled: true
-        custom: true
-        spec:
-          httpGet:
-            path: /ping
-            port: *port
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          timeoutSeconds: 1
-          failureThreshold: 3
-      readiness: *probes
-      startup:
-        enabled: false
+    # probes:
+    #   liveness: &probes
+    #     enabled: true
+    #     custom: true
+    #     spec:
+    #       httpGet:
+    #         path: /ping
+    #         port: *port
+    #       initialDelaySeconds: 0
+    #       periodSeconds: 10
+    #       timeoutSeconds: 1
+    #       failureThreshold: 3
+    #   readiness: *probes
+    #   startup:
+    #     enabled: false
 
     ingress:
       main:
@@ -76,9 +76,14 @@ spec:
       config:
         enabled: true
         existingClaim: prowlarr-config
+
     resources:
       requests:
         cpu: 100m
         memory: 100Mi
       limits:
         memory: 500Mi
+
+    securityContext:
+      runAsUser: 568
+      runAsGroup: 568
