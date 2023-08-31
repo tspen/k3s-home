@@ -78,6 +78,7 @@ spec:
         type: pvc
         existingClaim: prowlarr-config-pvc
         subPath: &app
+        storageClass: nfs-csi-appdata
 
     resources:
       requests:
@@ -85,7 +86,3 @@ spec:
         memory: 100Mi
       limits:
         memory: 500Mi
-
-    securityContext:
-      runAsUser: 568
-      runAsGroup: 568
