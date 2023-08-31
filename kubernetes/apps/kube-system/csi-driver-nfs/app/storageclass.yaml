@@ -10,4 +10,6 @@ parameters:
   subDir: $${pvc.metadata.name}
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-mountOptions: ["hard", "noatime"]
+mountOptions: 
+  - nfsvers=4.1
+  
