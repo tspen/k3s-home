@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: prowlarr-config
+  name: prowlarr
   namespace: default
 spec:
   accessModes:
@@ -10,5 +10,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: prowlarr-pv
-  storageClassName: nfs-csi-appdata
+  volumeName: appdata-pv
