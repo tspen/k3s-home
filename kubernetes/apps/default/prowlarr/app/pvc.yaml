@@ -11,3 +11,4 @@ spec:
     requests:
       storage: 1Gi
   volumeName: appdata-pv
+  storageClassName: nfs-csi
