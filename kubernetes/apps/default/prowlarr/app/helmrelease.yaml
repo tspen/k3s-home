@@ -77,7 +77,6 @@ spec:
         enabled: true
         type: pvc
         existingClaim: prowlarr-config-pvc
-        subPath: &app
         storageClass: nfs-csi-appdata
 
     resources:
