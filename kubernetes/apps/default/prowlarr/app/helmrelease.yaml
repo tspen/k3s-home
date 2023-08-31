@@ -75,7 +75,8 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: prowlarr-config
+        type: pvc
+        existingClaim: prowlarr-config-pvc
 
     resources:
       requests:
