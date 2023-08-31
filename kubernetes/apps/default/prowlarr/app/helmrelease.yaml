@@ -76,7 +76,7 @@ spec:
       config:
         enabled: true
         type: pvc
-        existingClaim: &app
+        existingClaim: prowlarr
 
     resources:
       requests:
