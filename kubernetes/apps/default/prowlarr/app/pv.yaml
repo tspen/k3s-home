@@ -4,11 +4,11 @@ kind: PersistentVolume
 metadata:
   annotations:
     pv.kubernetes.io/provisioned-by: nfs.csi.k8s.io
-  name: appdata-pv
+  name: prowlarr-pv
   namespace: default
 spec:
   capacity:
-    storage: 50Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
@@ -20,7 +20,7 @@ spec:
     readOnly: false
     # volumeHandle format: {nfs-server-address}#{sub-dir-name}#{share-name}
     # make sure this value is unique for every share in the cluster
-    volumeHandle: 192.168.1.3#appdata#
+    volumeHandle: 192.168.1.3#appdata#prowlarr
     volumeAttributes:
       server: 192.168.1.3
-      share: /nvme/appdata
+      share: /nvme/appdata/prowlarr
