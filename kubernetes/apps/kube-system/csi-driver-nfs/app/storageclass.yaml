@@ -9,4 +9,6 @@ parameters:
   share: /nvme
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-mountOptions: ["hard", "noatime"]
+mountOptions: 
+  - nfsvers=4.1
+  - nolock
