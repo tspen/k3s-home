@@ -34,6 +34,7 @@ spec:
       ADVERTISE_IP: "https://plex.${SECRET_DOMAIN}"
       PLEX_UID: 0
       PLEX_GID: 0
+      PLEX_CLAIM: claim-z7szjbsqJyE8cg9umvLJ
     
     podSecurityContext:
       runAsUser: 0
