@@ -77,7 +77,7 @@ spec:
         enabled: true
         type: pvc
         existingClaim: prowlarr
-        subPath: /prowlarr
+        subPath: ./prowlarr
 
     resources:
       requests:
