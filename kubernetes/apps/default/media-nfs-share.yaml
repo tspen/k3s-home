@@ -10,7 +10,7 @@ spec:
   capacity:
     storage: 1Mi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-csi
   mountOptions:

@@ -87,3 +87,4 @@ spec:
       media:
         enabled: true
         existingClaim: media-nfs-share-pvc
+        mountPath: /media
