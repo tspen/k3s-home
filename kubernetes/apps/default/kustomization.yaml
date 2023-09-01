@@ -5,3 +5,5 @@ resources:
   - ./namespace.yaml
   - ./hajimari/ks.yaml
   - ./prowlarr/ks.yaml
+  - ./plex/ks.yaml
+  - ./media-nfs-share.yaml
