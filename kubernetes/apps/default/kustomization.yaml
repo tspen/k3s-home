@@ -8,4 +8,4 @@ resources:
   - ./plex/ks.yaml
   - ./sabnzbd.yaml
   - ./media-nfs-share.yaml
-  - ./downloads-nfs.share.yaml
+  - ./downloads-nfs-share.share.yaml
