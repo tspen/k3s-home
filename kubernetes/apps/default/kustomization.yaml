@@ -6,6 +6,6 @@ resources:
   - ./hajimari/ks.yaml
   - ./prowlarr/ks.yaml
   - ./plex/ks.yaml
-  - ./sabnzbd.yaml
+  - ./sabnzbd/ks.yaml
   - ./media-nfs-share.yaml
   - ./downloads-nfs-share.yaml
