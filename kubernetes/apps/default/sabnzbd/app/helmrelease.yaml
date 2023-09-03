@@ -50,7 +50,7 @@ spec:
           httpGet:
             path: /api?mode=version
             port: *port
-          initialDelaySeconds: 30
+          initialDelaySeconds: 5
           periodSeconds: 10
           timeoutSeconds: 1
           failureThreshold: 3
@@ -88,7 +88,7 @@ spec:
         enabled: true
         existingClaim: media-nfs-share-pvc
         mountPath: /media
-      media:
+      downloads:
         enabled: true
         existingClaim: downloads-nfs-share-pvc
         mountPath: /downloads
