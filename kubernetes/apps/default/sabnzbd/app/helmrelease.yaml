@@ -88,3 +88,7 @@ spec:
         enabled: true
         existingClaim: media-nfs-share-pvc
         mountPath: /media
+      media:
+        enabled: true
+        existingClaim: downloads-nfs-share-pvc
+        mountPath: /downloads
