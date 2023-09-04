@@ -8,5 +8,6 @@ resources:
   - ./plex/ks.yaml
   - ./sabnzbd/ks.yaml
   - ./sonarr/ks.yaml
+  - ./radarr/ks.yaml
   - ./media-nfs-share.yaml
   - ./downloads-nfs-share.yaml
