@@ -33,11 +33,6 @@ spec:
       TZ: "${TIMEZONE}"
       SABNZBD__PORT: &port 8080
       SABNZBD__HOST_WHITELIST_ENTRIES: >-
-        sabnzbd,
-        sabnzbd.downloads,
-        sabnzbd.downloads.svc,
-        sabnzbd.downloads.svc.cluster,
-        sabnzbd.downloads.svc.${CLUSTER_DOMAIN},
         sabnzbd.${SECRET_DOMAIN}
     
     service:
@@ -49,18 +44,18 @@ spec:
     securityContext:
       privileged: true
 
-    probes:
-      liveness: &probes
-        enabled: true
-        custom: true
-        spec:
-          httpGet:
-            path: /api?mode=version
-            port: *port
-          initialDelaySeconds: 5
-          periodSeconds: 10
-          timeoutSeconds: 1
-          failureThreshold: 3
+    # probes:
+    #   liveness: &probes
+    #     enabled: true
+    #     custom: true
+    #     spec:
+    #       httpGet:
+    #         path: /api?mode=version
+    #         port: *port
+    #       initialDelaySeconds: 5
+    #       periodSeconds: 10
+    #       timeoutSeconds: 1
+    #       failureThreshold: 3
 
     ingress:
       main:
