@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: mdi:filmstrip
+  name: radarr
   namespace: default
 spec:
   accessModes:
@@ -10,5 +10,5 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: mdi:filmstrip-pv
+  volumeName: radarr-pv
   storageClassName: nfs-csi

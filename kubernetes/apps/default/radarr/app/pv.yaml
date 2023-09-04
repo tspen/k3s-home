@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   annotations:
     pv.kubernetes.io/provisioned-by: nfs.csi.k8s.io
-  name: mdi:filmstrip-pv
+  name: radarr
   namespace: default
 spec:
   capacity:
@@ -18,7 +18,7 @@ spec:
   csi:
     driver: nfs.csi.k8s.io
     readOnly: false
-    volumeHandle: 192.168.1.3#appdata#mdi:filmstrip
+    volumeHandle: 192.168.1.3#appdata#radarr
     volumeAttributes:
       server: 192.168.1.3
       share: /nvme/appdata
