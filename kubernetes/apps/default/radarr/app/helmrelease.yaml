@@ -87,7 +87,7 @@ spec:
       config:
         enabled: true
         type: pvc
-        existingClaim: radarr
+        existingClaim: radarr-pvc
         subPath: ./radarr
       media:
         enabled: true
