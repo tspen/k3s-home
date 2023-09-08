@@ -44,7 +44,7 @@ spec:
     securityContext:
       privileged: true
 
-    # probes:
+    probes:
     #   liveness: &probes
     #     enabled: true
     #     custom: true
@@ -57,8 +57,8 @@ spec:
     #       timeoutSeconds: 1
     #       failureThreshold: 3
     #   readiness: *probes
-    #   startup:
-    #     enabled: false
+      startup:
+        enabled: false
 
     ingress:
       main:

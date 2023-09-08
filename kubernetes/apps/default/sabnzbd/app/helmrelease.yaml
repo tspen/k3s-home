@@ -67,7 +67,7 @@ spec:
         enabled: true
         ingressClassName: internal
         annotations:
-          hajimari.io/icon: "sabnzbd"
+          hajimari.io/icon: mdi:download
           hajimari.io/group: "media"
         hosts:
           - host: &host "sabnzbd.${SECRET_DOMAIN}"
