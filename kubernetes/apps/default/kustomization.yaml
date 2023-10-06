@@ -11,3 +11,4 @@ resources:
   - ./radarr/ks.yaml
   - ./media-nfs-share.yaml
   - ./downloads-nfs-share.yaml
+  - ./recyclarr/ks.yaml
