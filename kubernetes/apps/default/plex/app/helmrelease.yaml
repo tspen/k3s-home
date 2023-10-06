@@ -31,7 +31,7 @@ spec:
       tag: 1.32.7.7571-13cdc68dc@sha256:a9474ff865f654cee7069357ce52469ab2929abdc1133568ba07b5fe83d09e9f
     env:
       TZ: "${TIMEZONE}"
-      ADVERTISE_IP: "https://plex.${SECRET_DOMAIN}:443,http://192.168.1.147:32400"
+      ADVERTISE_IP: "https://plex.${SECRET_DOMAIN}:443,http://192.168.1.148:32400"
       ALLOWED_NETWORKS: "10.0.0.0/8,172.16.0.0/16,192.168.0.0/16"
       HOSTNAME: "plex"
       PLEX_UID: 0
