@@ -12,7 +12,7 @@ spec:
       version: 2.0.3
       sourceRef:
         kind: HelmRepository
-        name: bjw-s
+        name: bjw-s-charts
         namespace: flux-system
   maxHistory: 2
   install:
@@ -27,7 +27,7 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/onedr0p/radarr-develop
+      repository: ghcr.io/onedr0p/radarr
       tag: 5.0.3.8127
 
     env:
