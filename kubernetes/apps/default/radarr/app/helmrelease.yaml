@@ -83,6 +83,7 @@ spec:
       config:
         existingClaim: radarr-pvc
         globalMounts:
+          - path: /config
           - subPath: radarr
       media:
         existingClaim: media-nfs-share-pvc
