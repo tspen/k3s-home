@@ -84,11 +84,17 @@ spec:
         enabled: true
         existingClaim: radarr-pvc
         subPath: ./radarr
+        advancedMounts:
+          main:
+            main:
+              - path: /config
       media:
         enabled: true
         existingClaim: media-nfs-share-pvc
-        mountPath: /media
+        globalMounts:
+          - path: /media
       downloads:
         enabled: true
         existingClaim: downloads-nfs-share-pvc
-        mountPath: /downloads
+        globalMounts:
+          - path: /downloads
