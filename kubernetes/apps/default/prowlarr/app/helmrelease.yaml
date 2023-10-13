@@ -27,8 +27,8 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/onedr0p/prowlarr-develop
-      tag: 1.9.1.3981
+      repository: ghcr.io/onedr0p/prowlarr
+      tag: 1.8.6.3946
     env:
       TZ: "${TIMEZONE}"
       PROWLARR__INSTANCE_NAME: &app prowlarr
