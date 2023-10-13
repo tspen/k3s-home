@@ -32,8 +32,6 @@ spec:
 
     env:
       TZ: "${TIMEZONE}"
-      SONARR__APPLICATION_URL: "https://sonarr.${SECRET_DOMAIN}"
-      SONARR__LOG_LEVEL: info
 
     service:
       main:
