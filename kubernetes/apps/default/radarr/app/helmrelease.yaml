@@ -10,7 +10,6 @@ spec:
     spec:
       chart: app-template
       version: 1.5.1
-      interval: 30m
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -27,25 +26,15 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    controllers:
-      main:
-        pod:
-          securityContext:
-            runAsUser: 568
-            runAsGroup: 568
-            fsGroup: 568
-            fsGroupChangePolicy: OnRootMismatch
-        containers:
-          main:
-            image:
-              repository: ghcr.io/onedr0p/radarr
-              tag: 5.0.3.8127
-            resources:
-              requests:
-                cpu: 15m
-                memory: 352Mi
-              limits:
-                memory: 1Gi
+    image:
+      repository: ghcr.io/onedr0p/radarr
+      tag: 4.7.5.7809
+
+    env:
+      TZ: "${TIMEZONE}"
+      SONARR__APPLICATION_URL: "https://sonarr.${SECRET_DOMAIN}"
+      SONARR__LOG_LEVEL: info
+
     service:
       main:
         ports:
@@ -56,13 +45,24 @@ spec:
       privileged: true
 
     probes:
+    #   liveness: &probes
+    #     enabled: true
+    #     custom: true
+    #     spec:
+    #       httpGet:
+    #         path: /ping
+    #         port: *port
+    #       initialDelaySeconds: 0
+    #       periodSeconds: 10
+    #       timeoutSeconds: 1
+    #       failureThreshold: 3
+    #   readiness: *probes
       startup:
         enabled: false
 
     ingress:
       main:
         enabled: true
-        primary: true
         ingressClassName: internal
         annotations:
           hajimari.io/icon: mdi:filmstrip
@@ -72,22 +72,30 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-                service:
-                  name: main
-                  port: http
         tls:
           - hosts:
               - *host
 
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
+      supplementalGroups:
+        - 100
+
+
     persistence:
       config:
-        type: persistentVolumeClaim
+        enabled: true
+        type: pvc
         existingClaim: radarr-pvc
-        globalMounts:
-          - subPath: radarr
+        subPath: ./radarr
       media:
-        type: persistentVolumeClaim
+        enabled: true
         existingClaim: media-nfs-share-pvc
+        mountPath: /media
       downloads:
-        type: persistentVolumeClaim
+        enabled: true
         existingClaim: downloads-nfs-share-pvc
+        mountPath: /downloads
