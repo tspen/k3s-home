@@ -74,8 +74,8 @@ spec:
         enabled: true
         ingressClassName: external
         annotations:
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
           hajimari.io/icon: "plex"
-          hajimari.io/group: "media"
         hosts:
           - host: &host "plex.${SECRET_DOMAIN}"
             paths:
