@@ -28,7 +28,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/plex
-      tag: 1.32.7.7571-13cdc68dc@sha256:59d99221e5560d57ecb1e8550c330bb7dd5ccb77cd0ecab3832125a6608b3207
+      tag: 1.32.8.7639-fb6452ebf
     env:
       TZ: "${TIMEZONE}"
       ADVERTISE_IP: "https://plex.${SECRET_DOMAIN}:443,http://192.168.1.148:32400"
